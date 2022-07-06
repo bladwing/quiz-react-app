@@ -1,27 +1,48 @@
 import React, { useState, useEffect } from "react";
+import { ApiQuizDB } from "../connectors/ApiConector";
+import { getWithExpiry, setWithExpiry} from "../utils/LocalStorage"
+
+
 import { Rings } from "react-loader-spinner";
 import { Progress } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ApiQuizDB } from "../connectors/ApiConector";
-
+ 
 export default function Quiz(props) {
+  const [data, setData] = useState({ questions: [], answers: [] });
   const [isCorrect, setIsCorrect] = useState(null);
   const [selected, setSelected] = useState(null);
   const [confirm, setConfirm] = useState(false);
 
+
+
+  useEffect(() => {
+    const getData = async () => {
+      const tempData = ApiQuizDB;
+      setWithExpiry("data", tempData, 1000);
+      setData({
+        questions: getWithExpiry("data").questions,
+        answers: getWithExpiry("data").answers,
+      });
+    };
+    setWithExpiry("data")
+      ? setData({
+          questions: getWithExpiry("data").questions,
+          answers: getWithExpiry("data").answers,
+        })
+      : getData();
+  }, []);
   const selectAnswer = (id) => {
     if (!confirm) {
       setSelected(id + 1);
     }
   };
-
+  
   return (
     <div>
-      <h1>This is Quiz...</h1>
-
-      {props.question.options.map((option, index) => (
+  
+      {props.question.option.map((option, index) => (
         <div
-          key={option}
+          key={option.id}
           className={
             "single-option " +
             (isCorrect === true && selected - 1 === index
@@ -34,15 +55,9 @@ export default function Quiz(props) {
           }
           onClick={() => selectAnswer(index)}
         >
-          <span>{option}</span>
+         
         </div>
       ))}
-
-      <Rings />
-
-      <Progress multi>
-        <Progress bar color="success" value="30" />
-      </Progress>
     </div>
   );
 }
