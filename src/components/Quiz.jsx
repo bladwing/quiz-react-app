@@ -1,5 +1,5 @@
 import React from "react";
-import { ApiQuizDB } from "../connectors/ApiConector";
+
 
 
 export default function Quiz() {
