@@ -27,6 +27,10 @@ export default function Quiz() {
       : getData();
   }, []);
 
+  const handleNext = () => {
+    setCurrentQuestionId(currentQuestionId + 1);
+  };
+
   return !questions.length ? (
     <div className="page">
       <Rings color="#007FFF" height={200} width={200} />
@@ -36,6 +40,7 @@ export default function Quiz() {
       <Questions
         question={questions[currentQuestionId]}
         answer={answers[currentQuestionId]}
+        onClick={handleNext}
       ></Questions>
     </div>
   );
