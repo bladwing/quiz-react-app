@@ -12,6 +12,11 @@
 .Progress {
     width: 400px;
     color: red;
-    border: 1px solid black;
-    
+    border: 1px solid black;   
+}
+
+.Loading {
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
 }
