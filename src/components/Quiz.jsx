@@ -10,7 +10,7 @@ export default function Quiz() {
   const { questions, answers } = data;
 
   useEffect(() => {
-    const getData = async () => {
+    const getQuestions = async () => {
       const tempData = await questionData();
 
       setWithExpiry("data", tempData, 1000);
@@ -24,7 +24,7 @@ export default function Quiz() {
           questions: getWithExpiry("data").questions,
           answers: getWithExpiry("data").answers,
         })
-      : getData();
+      : getQuestions();
   }, []);
 
   const handleNext = () => {
