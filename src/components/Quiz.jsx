@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Rings } from "react-loader-spinner";
+import { Progress } from "reactstrap";
 import { setWithExpiry, getWithExpiry } from "../utils/LocalStorage";
 import { questionData } from "../connectors/ApiConector";
 import Questions from "./Questions";
@@ -42,6 +43,16 @@ export default function Quiz() {
         answer={answers[currentQuestionId]}
         onClick={handleNext}
       ></Questions>
+
+      <div className="ProgressContainer">
+        <Progress
+          className="Progress"
+          color="success"
+          value={(currentQuestionId / questions.length) * 100}
+        >
+          {currentQuestionId}/{questions.length}
+        </Progress>
+      </div>
     </div>
   );
 }

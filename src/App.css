@@ -1,3 +1,17 @@
 .App {
     text-align: center;
 }
+
+.ProgressContainer,
+.Progress {
+    display: flex;
+    justify-content: center;
+
+}
+
+.Progress {
+    width: 400px;
+    color: red;
+    border: 1px solid black;
+    
+}
