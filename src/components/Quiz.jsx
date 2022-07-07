@@ -14,7 +14,7 @@ export default function Quiz() {
     const getData = async () => {
       const tempData = await questionData();
 
-      setWithExpiry("data", tempData, 1000);
+      setWithExpiry("data", tempData, 50000);
       setData({
         questions: getWithExpiry("data").questions,
         answers: getWithExpiry("data").answers,
