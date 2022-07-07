@@ -29,7 +29,7 @@ export default function Quiz() {
 
   return !questions.length ? (
     <div className="page">
-      <Rings color="#FFB03B" height={150} width={150} />
+      <Rings color="#007FFF" height={200} width={200} />
     </div>
   ) : (
     <div className="page">
