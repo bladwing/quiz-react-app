@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "../style/questionsArea.scss";
 
 export default function Questions(props) {
@@ -47,8 +46,7 @@ export default function Questions(props) {
         </div>
       </div>
       {!confirm && selected && (
-        <Link
-        to='/' 
+        <button
           className="button2"
           onClick={() => handleConfirm()}
           disabled={!selected}
@@ -58,16 +56,16 @@ export default function Questions(props) {
           <span></span>
           <span></span>
           დადასტურება
-        </Link>
+        </button>
       )}
       {confirm && (
-        <Link className="button2" to='/' onClick={() => props.onClick()}>
+        <button className="button2" onClick={() => props.onClick()}>
           <span></span>
           <span></span>
           <span></span>
           <span></span>
           შემდეგი
-        </Link>
+        </button>
       )}
     </div>
   );
