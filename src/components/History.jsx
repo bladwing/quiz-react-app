@@ -5,7 +5,9 @@ export default function History() {
   const [attempts, setAttempts] = useState([]);
 
   useEffect(() => {
-    const tmpAttempts = JSON.parse(localStorage.getItem("attempts") || []);
+    const attempts = JSON.parse(localStorage.getItem("Attempts")) || [];
+    localStorage.setItem("Attempts", JSON.stringify(attempts));
+    const tmpAttempts = JSON.parse(localStorage.getItem("Attempts") || []);
     setAttempts(tmpAttempts);
   }, []);
 

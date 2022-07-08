@@ -14,7 +14,6 @@ export default function App() {
           <Route path="/" element={<Home />} />
         </Routes>
       </Router>
-      
     </div>
   );
 }
@@ -31,7 +30,7 @@ const Home = () => {
         <span></span>
         დაწყება
       </Link>
-      <Link to="/history"  className="button2">
+      <Link to="/history" className="button2">
         <span></span>
         <span></span>
         <span></span>

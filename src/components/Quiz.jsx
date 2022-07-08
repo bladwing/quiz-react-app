@@ -39,7 +39,6 @@ export default function Quiz() {
   const handleSetScore = (newScore) => {
     setScore(newScore);
   };
- 
 
   return !questions.length ? (
     <div className="Loading">
@@ -77,8 +76,8 @@ export default function Quiz() {
         <div className="final-page">
           <div className="score-container">
             <h3>საბოლო შემდეგი:</h3>
-            <h4>სწორი პასუხი: {score} </h4>
             <h4>სულ კითხვა: {questions.length}</h4>
+            <h4>სწორი პასუხი: {score} </h4>
           </div>
 
           <Link to="/" className="button2">
