@@ -14,6 +14,9 @@ export default function Questions(props) {
 
   const handleConfirm = () => {
     setConfirm(true);
+    if (selected === props.answer.answer) {
+      setIsCorrect(true);
+    } else setIsCorrect(false);
   };
 
   return (
