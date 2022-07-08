@@ -11,14 +11,12 @@ export default function Questions(props) {
       setSelected(id + 1);
     }
   };
-
   const handleConfirm = () => {
     setConfirm(true);
     if (selected === props.answer.answer) {
       setIsCorrect(true);
     } else setIsCorrect(false);
   };
-
   return (
     <div className="questionContainer">
       <div className="questions">
