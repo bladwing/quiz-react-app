@@ -1,22 +1,54 @@
 import React, { useState } from "react";
-import "../style/questionsArea.scss";
 
-export default function Questions(props) {
+export default function MultiType(props) {
   const [isCorrect, setIsCorrect] = useState(null);
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState([]);
   const [confirm, setConfirm] = useState(false);
 
   const selectAnswer = (id) => {
     if (!confirm) {
-      setSelected(id + 1);
+      if (selected.includes(id + 1)) {
+        let tmp = [...selected];
+        let index = tmp.indexOf(id + 1);
+        if (index !== -1) {
+          tmp.splice(index, 1);
+        }
+        setSelected(tmp);
+      } else {
+        const tmp = [...selected, id + 1];
+        setSelected(tmp);
+      }
     }
   };
+
+  const arrayCompare = (_arr1, _arr2) => {
+    if (
+      !Array.isArray(_arr1) ||
+      !Array.isArray(_arr2) ||
+      _arr1.length !== _arr2.length
+    ) {
+      return false;
+    }
+
+    const arr1 = _arr1.concat().sort();
+    const arr2 = _arr2.concat().sort();
+
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) {
+        return false;
+      }
+    }
+
+    return true;
+  };
+
   const handleConfirm = () => {
     setConfirm(true);
-    if (selected === props.answer.answer) {
+    if (arrayCompare(selected, props.answer.answer)) {
       setIsCorrect(true);
     } else setIsCorrect(false);
   };
+
   return (
     <div className="questionContainer">
       <div className="questions">
@@ -28,11 +60,12 @@ export default function Questions(props) {
               key={option}
               className={
                 "singleOption " +
-                (isCorrect === true && selected - 1 === index
+                (isCorrect === true && selected.some((el) => el - 1 === index)
                   ? "correct"
-                  : isCorrect === false && selected - 1 === index
+                  : isCorrect === false &&
+                    selected.some((el) => el - 1 === index)
                   ? "wrong"
-                  : selected - 1 === index
+                  : selected.some((el) => el - 1 === index)
                   ? "active "
                   : "")
               }
@@ -43,7 +76,7 @@ export default function Questions(props) {
           ))}
         </div>
       </div>
-      {!confirm && selected && (
+      {!confirm && !!selected.length && (
         <button
           className="button2"
           onClick={() => handleConfirm()}

@@ -3,7 +3,10 @@ import { Rings } from "react-loader-spinner";
 import { Progress } from "reactstrap";
 import { setWithExpiry, getWithExpiry } from "../utils/LocalStorage";
 import { questionData } from "../connectors/ApiConector";
-import Questions from "./Questions";
+import "../style/questionsArea.scss";
+import SingleType from "./SingleType";
+import MultiType from "./MultyType";
+import BooleanType  from "./BooleanType";
 
 export default function Quiz() {
   const [data, setData] = useState({ questions: [], answers: [] });
@@ -37,11 +40,35 @@ export default function Quiz() {
     </div>
   ) : (
     <div>
-      <Questions
-        question={questions[currentQuestionId]}
-        answer={answers[currentQuestionId]}
-        onClick={handleNext}
-      ></Questions>
+            {currentQuestionId < questions.length ? (
+        questions[currentQuestionId].type === "single" ? (
+          <SingleType
+            question={questions[currentQuestionId]}
+            answer={answers[currentQuestionId]}
+            onClick={handleNext}
+          ></SingleType>
+        ) : questions[currentQuestionId].type === "multiple" ? (
+          <MultiType
+            question={questions[currentQuestionId]}
+            answer={answers[currentQuestionId]}
+            onClick={handleNext}
+          ></MultiType>
+        ) : (
+          <BooleanType
+            question={questions[currentQuestionId]}
+            answer={answers[currentQuestionId]}
+            onClick={handleNext}
+          ></BooleanType>
+        )
+      ) : (
+        <div className="final-page">
+          <div className="score-container">
+            <h3>საბოლო შემდეგი:</h3>
+          </div>
+     
+        </div>
+      )}
+
 
       <div className="ProgressContainer">
         <Progress
@@ -52,6 +79,8 @@ export default function Quiz() {
           {currentQuestionId}/{questions.length}
         </Progress>
       </div>
+   
+
     </div>
   );
 }
