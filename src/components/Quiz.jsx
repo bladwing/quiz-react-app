@@ -4,14 +4,15 @@ import { Progress } from "reactstrap";
 import { setWithExpiry, getWithExpiry } from "../utils/LocalStorage";
 import { questionData } from "../connectors/ApiConector";
 import "../style/questionsArea.scss";
-import SingleType from "./SingleType";
-import MultiType from "./MultyType";
-import BooleanType  from "./BooleanType";
+import SingleType from "./questionTypes/SingleType";
+import MultiType from "./questionTypes/MultyType";
+import BooleanType  from "./questionTypes/BooleanType";
 
 export default function Quiz() {
   const [data, setData] = useState({ questions: [], answers: [] });
   const [currentQuestionId, setCurrentQuestionId] = useState(0);
   const { questions, answers } = data;
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     const getQuestions = async () => {
@@ -34,6 +35,10 @@ export default function Quiz() {
     setCurrentQuestionId(currentQuestionId + 1);
   };
 
+  const handleSetScore = (newScore) => {
+    setScore(newScore);
+  };
+
   return !questions.length ? (
     <div className="Loading">
       <Rings color="#007FFF" height={250} width={250} />
@@ -46,24 +51,32 @@ export default function Quiz() {
             question={questions[currentQuestionId]}
             answer={answers[currentQuestionId]}
             onClick={handleNext}
+            score={score}
+            newScore={handleSetScore}
           ></SingleType>
         ) : questions[currentQuestionId].type === "multiple" ? (
           <MultiType
             question={questions[currentQuestionId]}
             answer={answers[currentQuestionId]}
             onClick={handleNext}
+            score={score}
+            newScore={handleSetScore}
           ></MultiType>
         ) : (
           <BooleanType
             question={questions[currentQuestionId]}
             answer={answers[currentQuestionId]}
             onClick={handleNext}
+            score={score}
+            newScore={handleSetScore}
           ></BooleanType>
         )
       ) : (
         <div className="final-page">
           <div className="score-container">
             <h3>საბოლო შემდეგი:</h3>
+           <h4>სწორი პასუხი: {score} </h4>
+           <h4>სულ კითხვა: {questions.length}</h4>
           </div>
      
         </div>

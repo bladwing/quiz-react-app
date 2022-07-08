@@ -10,6 +10,7 @@ export default function Boolean(props) {
     setConfirm(true);
     if (selected === props.answer.answer) {
       setIsCorrect(true);
+      props.newScore(props.score + 1);
     } else setIsCorrect(false);
   };
 
