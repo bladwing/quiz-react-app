@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "../style/history.scss"
 
 export default function History() {
   const [attempts, setAttempts] = useState([]);
@@ -12,10 +13,10 @@ export default function History() {
   }, []);
 
   return (
-    <div>
+    <div className="historyContainer">
       <div>
         <h2>შედეგების ისტორია</h2>
-        <table>
+        <table className="historyTable">
           <thead>
             <tr>
               <th>lvl</th>
