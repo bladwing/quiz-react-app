@@ -8,6 +8,7 @@ import "../style/questionsArea.scss";
 import SingleType from "./questionTypes/SingleType";
 import MultiType from "./questionTypes/MultyType";
 import BooleanType from "./questionTypes/BooleanType";
+import TryAgain from "./TryAgain";
 
 export default function Quiz() {
   const [data, setData] = useState({ questions: [], answers: [] });
@@ -73,27 +74,29 @@ export default function Quiz() {
           ></BooleanType>
         )
       ) : (
-        <div className="final-page">
-          <div className="score-container">
+        <div className="ScorePage">
+          <div className="scoreContainer">
             <h3>საბოლო შემდეგი:</h3>
             <h4>სულ კითხვა: {questions.length}</h4>
             <h4>სწორი პასუხი: {score} </h4>
           </div>
-
-          <Link to="/" className="button2">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            მთავარი
-          </Link>
-          <Link to="/" className="button2">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            ტესტის გამეორება
-          </Link>
+          <div className="ScoreButton">
+            <Link to="/" className="button2">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              მთავარი
+            </Link>
+            <Link to="/" className="button2">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              ტესტის გამეორება
+            </Link>
+            <TryAgain value={score} total={questions.length} />
+          </div>
         </div>
       )}
 
