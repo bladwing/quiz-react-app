@@ -13,7 +13,6 @@ export default function Quiz() {
   useEffect(() => {
     const getData = async () => {
       const tempData = await questionData();
-
       setWithExpiry("data", tempData, 50000);
       setData({
         questions: getWithExpiry("data").questions,
@@ -33,11 +32,11 @@ export default function Quiz() {
   };
 
   return !questions.length ? (
-    <div className="page">
-      <Rings color="#007FFF" height={200} width={200} />
+    <div className="Loading">
+      <Rings color="#007FFF" height={250} width={250} />
     </div>
   ) : (
-    <div className="page">
+    <div>
       <Questions
         question={questions[currentQuestionId]}
         answer={answers[currentQuestionId]}
