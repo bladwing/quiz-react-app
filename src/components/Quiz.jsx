@@ -9,7 +9,7 @@ import SingleType from "./questionTypes/SingleType";
 import MultiType from "./questionTypes/MultyType";
 import BooleanType from "./questionTypes/BooleanType";
 
-export default function Quiz(props) {
+export default function Quiz() {
   const [data, setData] = useState({ questions: [], answers: [] });
   const [currentQuestionId, setCurrentQuestionId] = useState(0);
   const { questions, answers } = data;
@@ -18,16 +18,16 @@ export default function Quiz(props) {
   useEffect(() => {
     const getQuestions = async () => {
       const tempData = await questionData();
-      setWithExpiry("data", tempData, 50000);
+      setWithExpiry("Questions", tempData, 50000);
       setData({
-        questions: getWithExpiry("data").questions,
-        answers: getWithExpiry("data").answers,
+        questions: getWithExpiry("Questions").questions,
+        answers: getWithExpiry("Questions").answers,
       });
     };
-    getWithExpiry("data")
+    getWithExpiry("Questions")
       ? setData({
-          questions: getWithExpiry("data").questions,
-          answers: getWithExpiry("data").answers,
+          questions: getWithExpiry("Questions").questions,
+          answers: getWithExpiry("Questions").answers,
         })
       : getQuestions();
   }, []);
@@ -39,6 +39,7 @@ export default function Quiz(props) {
   const handleSetScore = (newScore) => {
     setScore(newScore);
   };
+ 
 
   return !questions.length ? (
     <div className="Loading">
