@@ -1,0 +1,43 @@
+$Azure: "#007FFF";
+
+.historyContainer{
+    width: 100%;
+  
+    h2 {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #000;
+      text-align: center;
+      padding: 20px 0px;
+    }
+    .historyTable {
+      width: 50%;
+      margin: 0 auto;
+  
+      thead {
+        border-bottom: 2px solid darkblue;
+        th {
+          text-transform: uppercase;
+          text-align: center;
+          padding: 10px;
+          color: #000;
+          border: 1px solid darkblue;
+        }
+      }
+      tbody {
+        tr {
+            border: 1px solid darkblue;
+          color: #000;
+          text-align: center;
+          td {
+            padding: 10px;
+            border: 1px solid darkblue;
+          }
+          th {
+            padding-left: 10px;
+            border: 1px solid darkblue;
+          }
+        }
+      }
+    }
+  }
