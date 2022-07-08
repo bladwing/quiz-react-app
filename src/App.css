@@ -1,35 +1,3 @@
-body {
-  background-color: whitesmoke;
-}
-
-.QuizMainContainer {
-  text-align: center;
-  margin: 5% auto;
-  background-color: beige;
-  border: 1px solid red;
-  width: 50%;
-  height: 600px;
-  border-radius: 10px;
-}
-
-.ProgressContainer,
-.Progress {
-  display: flex;
-  justify-content: center;
-}
-
-.Progress {
-  width: 400px;
-  color: red;
-  border: 1px solid black;
-}
-
-.Loading {
-  display: flex;
-  justify-content: center;
-  margin-top: 15%;
-}
-
-.homePage {
-  margin-top: 30%;
+.App {
+    text-align: center;
 }

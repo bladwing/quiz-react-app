@@ -5,7 +5,7 @@ import "./style/buttons.scss";
 
 export default function App() {
   return (
-    <div className="QuizMainContainer">
+    <div className="App">
       <Router>
         <Routes>
           <Route path="/quiz" element={<Quiz />} />
@@ -19,8 +19,8 @@ export default function App() {
 
 const Home = () => {
   return (
-    <div className="homePage">
-      <h2> გამოცადე შენი წოდნა Front-End - ში</h2>
+    <div>
+      <h1> გამოცადე შენი წოდნა JavaScript - ში</h1>
 
       <Link to="/quiz" className="button2">
         <span></span>
@@ -50,6 +50,13 @@ const History = () => {
         <span></span>
         <span></span>
         მთავარი გვერდი
+      </Link>
+      <Link to="/history" className="button2">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        შედეგები
       </Link>
     </div>
   );
