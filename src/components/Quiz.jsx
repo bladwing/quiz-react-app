@@ -47,6 +47,7 @@ export default function Quiz() {
     </div>
   ) : (
     <div>
+      
       {currentQuestionId < questions.length ? (
         questions[currentQuestionId].type === "single" ? (
           <SingleType
