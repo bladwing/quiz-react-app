@@ -20,56 +20,49 @@ export default function Boolean(props) {
   };
   return (
     <div className="questionContainer">
+      <h3 className="questionTitle">{props.question.question}</h3>
       <div className="questions">
-        <h2>{props.question.question}</h2>
+        <div className="answers">
+          <div
+            className={
+              "singleOption " +
+              (isCorrect === true && selected === true
+                ? "correct"
+                : isCorrect === false && selected === true
+                ? "wrong"
+                : selected === true
+                ? "active "
+                : "")
+            }
+            onClick={() => selectAnswer(true)}
+          >
+            <span> სწორი </span>
+          </div>
 
-        <div className="answers"> სიმართლე </div>
-
-        <div
-          className={
-            "single-option " +
-            (isCorrect === true && selected === true
-              ? "correct"
-              : isCorrect === false && selected === true
-              ? "wrong"
-              : selected === true
-              ? "active "
-              : "")
-          }
-          onClick={() => selectAnswer(true)}
-        ></div>
-
-        <div
-          className={
-            "single-option " +
-            (isCorrect === true && selected === false
-              ? "correct"
-              : isCorrect === false && selected === false
-              ? "wrong"
-              : selected === false
-              ? "active "
-              : "")
-          }
-          onClick={() => selectAnswer(false)}
-        >
-          <span className="answers">თყვილი</span>
+          <div
+            className={
+              "singleOption " +
+              (isCorrect === true && selected === false
+                ? "correct"
+                : isCorrect === false && selected === false
+                ? "wrong"
+                : selected === false
+                ? "active "
+                : "")
+            }
+            onClick={() => selectAnswer(false)}
+          >
+            <span>არასწორი</span>
+          </div>
         </div>
       </div>
       {!confirm && selected !== null && (
         <button className="button2" onClick={() => handleConfirm()}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
           დადასტურება
         </button>
       )}
       {confirm && (
         <button className="button2" onClick={() => props.onClick()}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
           შემდეგი
         </button>
       )}
