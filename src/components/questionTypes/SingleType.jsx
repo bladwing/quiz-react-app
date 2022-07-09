@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../style/questionsArea.scss";
 
-export default function Questions(props) {
+
+export default function SingleType(props) {
   const [isCorrect, setIsCorrect] = useState(null);
   const [selected, setSelected] = useState(null);
   const [confirm, setConfirm] = useState(false);
@@ -15,6 +15,7 @@ export default function Questions(props) {
     setConfirm(true);
     if (selected === props.answer.answer) {
       setIsCorrect(true);
+      props.newScore(props.score + 1);
     } else setIsCorrect(false);
   };
   return (
