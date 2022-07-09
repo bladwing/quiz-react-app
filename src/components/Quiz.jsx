@@ -42,8 +42,8 @@ export default function Quiz() {
   };
 
   return !questions.length ? (
-    <div className="Loading">
-      <Rings color="#007FFF" height={250} width={250} />
+    <div className="page">
+      <Rings color="#007FFF" height={200} width={200} />
     </div>
   ) : (
     <div>
