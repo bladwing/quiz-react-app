@@ -21,7 +21,7 @@ export default function App() {
 const Home = () => {
   return (
     <div className="homePage">
-      <h2> გამოცადე შენი წოდნა Front-End - ში</h2>
+      <h2> გამოცადე შენი ცოდნა Front-End - ში</h2>
 
       <Link to="/quiz" className="button2">
         <span></span>

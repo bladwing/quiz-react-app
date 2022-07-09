@@ -24,10 +24,10 @@ $red: "#EE3625";
     justify-content: space-between;
     margin: 0 auto;
     text-align: center;
-
+    border: 1px solid black;
     .answers {
       display: grid;
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
       grid-gap: 30px 5%;
       align-items: center;
@@ -65,3 +65,4 @@ $red: "#EE3625";
     }
   }
 }
+

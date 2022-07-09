@@ -52,8 +52,9 @@ export default function MultiType(props) {
 
   return (
     <div className="questionContainer">
+      <h2 className="questionTitle">{props.question.question}</h2>
       <div className="questions">
-        <h2>{props.question.question}</h2>
+        
 
         <div className="answers">
           {props.question.options.map((option, index) => (
