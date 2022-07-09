@@ -20,39 +20,40 @@ export default function Boolean(props) {
   };
   return (
     <div className="questionContainer">
+      <h2 className="questionTitle">{props.question.question}</h2>
       <div className="questions">
-        <h2>{props.question.question}</h2>
+        <div className="answers">
+          <div
+            className={
+              "singleOption " +
+              (isCorrect === true && selected === true
+                ? "correct"
+                : isCorrect === false && selected === true
+                ? "wrong"
+                : selected === true
+                ? "active "
+                : "")
+            }
+            onClick={() => selectAnswer(true)}
+          >
+            <span> სიმართლე </span>
+          </div>
 
-        <div className="answers"> სიმართლე </div>
-
-        <div
-          className={
-            "single-option " +
-            (isCorrect === true && selected === true
-              ? "correct"
-              : isCorrect === false && selected === true
-              ? "wrong"
-              : selected === true
-              ? "active "
-              : "")
-          }
-          onClick={() => selectAnswer(true)}
-        ></div>
-
-        <div
-          className={
-            "single-option " +
-            (isCorrect === true && selected === false
-              ? "correct"
-              : isCorrect === false && selected === false
-              ? "wrong"
-              : selected === false
-              ? "active "
-              : "")
-          }
-          onClick={() => selectAnswer(false)}
-        >
-          <span className="answers">თყვილი</span>
+          <div
+            className={
+              "singleOption " +
+              (isCorrect === true && selected === false
+                ? "correct"
+                : isCorrect === false && selected === false
+                ? "wrong"
+                : selected === false
+                ? "active "
+                : "")
+            }
+            onClick={() => selectAnswer(false)}
+          >
+            <span>თყვილი</span>
+          </div>
         </div>
       </div>
       {!confirm && selected !== null && (

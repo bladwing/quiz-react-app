@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 export default function SingleType(props) {
   const [isCorrect, setIsCorrect] = useState(null);
   const [selected, setSelected] = useState(null);
@@ -20,9 +19,8 @@ export default function SingleType(props) {
   };
   return (
     <div className="questionContainer">
+      <h2 className="questionTitle">{props.question.question}</h2>
       <div className="questions">
-        <h2>{props.question.question}</h2>
-
         <div className="answers">
           {props.question.options.map((option, index) => (
             <div
