@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 
 export default function Boolean(props) {
-  const [isCorrect, setIsCorrect] = useState(null);
-  const [selected, setSelected] = useState(null);
+  const [setIsCorrect] = useState(null);
+  const [selected] = useState(null);
   const [confirm, setConfirm] = useState(false);
 
   const handleConfirm = () => {

@@ -43,7 +43,13 @@ export default function TryAgain(props) {
         <span></span>
         შედეგების ისტორია
       </Link>
+      <Link to="/quiz" onClick={{}} className="button2">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        ტესტის გამეორება
+      </Link>
     </div>
   );
-};
-
+}

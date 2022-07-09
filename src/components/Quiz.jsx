@@ -88,13 +88,7 @@ export default function Quiz() {
               <span></span>
               მთავარი
             </Link>
-            <Link to="/" className="button2">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              ტესტის გამეორება
-            </Link>
+
             <TryAgain value={score} total={questions.length} />
           </div>
         </div>
