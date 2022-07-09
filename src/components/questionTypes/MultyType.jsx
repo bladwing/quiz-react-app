@@ -52,10 +52,8 @@ export default function MultiType(props) {
 
   return (
     <div className="questionContainer">
-      <h2 className="questionTitle">{props.question.question}</h2>
+      <h3 className="questionTitle">{props.question.question}</h3>
       <div className="questions">
-        
-
         <div className="answers">
           {props.question.options.map((option, index) => (
             <div
@@ -84,19 +82,11 @@ export default function MultiType(props) {
           onClick={() => handleConfirm()}
           disabled={!selected}
         >
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
           დადასტურება
         </button>
       )}
       {confirm && (
         <button className="button2" onClick={() => props.onClick()}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
           შემდეგი
         </button>
       )}

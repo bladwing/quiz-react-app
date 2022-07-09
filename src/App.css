@@ -1,15 +1,39 @@
 body {
   background-color: whitesmoke;
 }
+.homePage {
+  margin-top: 12%;
+}
+
+.frontEnd {
+  width: 30%;
+}
+.mainTitle {
+  margin-bottom: 7%;
+  color: #2364b0;
+}
+
+.startButton {
+  font-size: 26px !important;
+  color: #e54f26 !important;
+}
+.historyButton {
+  display: flex;
+  justify-content: center;
+  width: 26%;
+  margin: 3% auto;
+  color: #247283 !important;
+}
 
 .QuizMainContainer {
   text-align: center;
-  margin: 5% auto;
+  margin: 0 auto;
   background-color: beige;
-  border: 1px solid red;
-  width: 50%;
-  height: 700px;
+  border: 1px solid black;
+  width: 45%;
+  padding-bottom: 2%;
   border-radius: 10px;
+  font-family: bpg_glaho;
 }
 
 .ProgressContainer,
@@ -28,10 +52,6 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 15%;
-}
-
-.homePage {
-  margin-top: 30%;
 }
 
 .ScoreButton {

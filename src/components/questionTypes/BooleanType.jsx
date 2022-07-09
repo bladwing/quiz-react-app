@@ -20,7 +20,7 @@ export default function Boolean(props) {
   };
   return (
     <div className="questionContainer">
-      <h2 className="questionTitle">{props.question.question}</h2>
+      <h3 className="questionTitle">{props.question.question}</h3>
       <div className="questions">
         <div className="answers">
           <div
@@ -36,7 +36,7 @@ export default function Boolean(props) {
             }
             onClick={() => selectAnswer(true)}
           >
-            <span> სიმართლე </span>
+            <span> სწორი </span>
           </div>
 
           <div
@@ -52,25 +52,17 @@ export default function Boolean(props) {
             }
             onClick={() => selectAnswer(false)}
           >
-            <span>თყვილი</span>
+            <span>არასწორი</span>
           </div>
         </div>
       </div>
       {!confirm && selected !== null && (
         <button className="button2" onClick={() => handleConfirm()}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
           დადასტურება
         </button>
       )}
       {confirm && (
         <button className="button2" onClick={() => props.onClick()}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
           შემდეგი
         </button>
       )}
