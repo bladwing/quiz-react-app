@@ -47,7 +47,6 @@ export default function Quiz() {
     </div>
   ) : (
     <div>
-      
       {currentQuestionId < questions.length ? (
         questions[currentQuestionId].type === "single" ? (
           <SingleType
@@ -77,24 +76,21 @@ export default function Quiz() {
       ) : (
         <div className="ScorePage">
           <div className="scoreContainer">
-            <h3>საბოლო შემდეგი:</h3>
+            <h2>საბოლო შედეგი:</h2>
             <h4>სულ კითხვა: {questions.length}</h4>
             <h4>სწორი პასუხი: {score} </h4>
           </div>
-          <div className="ScoreButton">
-            <Link to="/" className="button2">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              მთავარი
+          <Link to="/" className="button2">
+              მთავარი გვერდი
             </Link>
+          <div className="ScoreButton">
+            
 
             <TryAgain value={score} total={questions.length} />
           </div>
         </div>
       )}
-
+   
       <div className="ProgressContainer">
         <Progress
           className="Progress"
@@ -104,6 +100,7 @@ export default function Quiz() {
           {currentQuestionId}/{questions.length}
         </Progress>
       </div>
+  
     </div>
   );
 }

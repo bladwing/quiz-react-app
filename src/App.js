@@ -3,6 +3,7 @@ import "./App.css";
 import Quiz from "./components/Quiz";
 import History from "./components/History";
 import "./style/buttons.scss";
+import FronEnd from "./style/frontEnd.png"
 
 export default function App() {
   return (
@@ -21,21 +22,14 @@ export default function App() {
 const Home = () => {
   return (
     <div className="homePage">
-      <h2> გამოცადე შენი ცოდნა Front-End - ში</h2>
+      <img src={FronEnd} alt="FrontEnd" className="frontEnd"/>
+      <h2 className="mainTitle"> გამოცადე შენი ცოდნა Front-End - ში</h2>
 
-      <Link to="/quiz" className="button2">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        დაწყება
+      <Link to="/quiz" className="button2 startButton">
+        ტესტის დაწყება
       </Link>
-      <Link to="/history" className="button2">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        შედეგები
+      <Link to="/history" className="button2 historyButton">
+        შედეგების ისტორია
       </Link>
     </div>
   );

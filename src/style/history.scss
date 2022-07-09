@@ -1,18 +1,20 @@
 $Azure: "#007FFF";
 
 .historyContainer{
+    margin-top: 5%;
     width: 100%;
   
     h2 {
       text-transform: uppercase;
       font-weight: bold;
-      color: #000;
+      color: #247283;
       text-align: center;
       padding: 20px 0px;
     }
     .historyTable {
       width: 50%;
       margin: 0 auto;
+      margin-top: 50px;
   
       thead {
         border-bottom: 2px solid darkblue;
@@ -22,6 +24,7 @@ $Azure: "#007FFF";
           padding: 10px;
           color: #000;
           border: 1px solid darkblue;
+          
         }
       }
       tbody {
@@ -41,3 +44,17 @@ $Azure: "#007FFF";
       }
     }
   }
+
+  .ScorePage {
+    margin-top: 100px;
+  }
+
+  .scoreContainer {
+    margin-bottom: 100px;
+  }
+.ScoreButton {
+  margin-top: 20px;
+  margin-bottom: 90px;
+
+  margin: 20px auto 90px auto;
+}

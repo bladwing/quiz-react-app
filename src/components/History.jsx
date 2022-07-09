@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../style/history.scss"
+import "../style/history.scss";
 
 export default function History() {
   const [attempts, setAttempts] = useState([]);
@@ -15,7 +15,11 @@ export default function History() {
   return (
     <div className="historyContainer">
       <div>
-        <h2>შედეგების ისტორია</h2>
+  
+        <h2 className="historyScore">შედეგების ისტორია</h2>
+        <Link to="/" className="button2">
+          მთავარი გვერდი
+        </Link>
         <table className="historyTable">
           <thead>
             <tr>
@@ -38,14 +42,6 @@ export default function History() {
           </tbody>
         </table>
       </div>
-
-      <Link to="/" className="button2">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        მთავარი
-      </Link>
     </div>
   );
 }
