@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Quiz from "./components/Quiz";
+import History from "./components/History";
 import "./style/buttons.scss";
 
 export default function App() {
@@ -28,28 +29,6 @@ const Home = () => {
         <span></span>
         <span></span>
         დაწყება
-      </Link>
-      <Link to="/history" className="button2">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        შედეგები
-      </Link>
-    </div>
-  );
-};
-const History = () => {
-  return (
-    <div>
-      <h1> შედეგები</h1>
-
-      <Link to="/" className="button2">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        მთავარი გვერდი
       </Link>
       <Link to="/history" className="button2">
         <span></span>
