@@ -1,0 +1,31 @@
+.Context {
+  position: absolute;
+  background-color: #007fff;
+  border-radius: 6px;
+  box-sizing: border-box;
+  padding: 4px 17px 5px;
+
+  &:hover {
+    background-color: red;
+  }
+}
+
+.delete-button {
+  position: relative;
+  transition: all 200ms;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 700;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .delete-text {
+    font-weight: 400;
+    font-size: 15px;
+    padding-left: 5px;
+  }
+}

@@ -12,33 +12,33 @@ $Azure: "#007FFF";
       padding: 20px 0px;
     }
     .historyTable {
-      width: 50%;
+      width: 67%;
       margin: 0 auto;
       margin-top: 50px;
   
       thead {
-        border-bottom: 2px solid darkblue;
+        border-bottom: 2px solid #2364b0;
         th {
           text-transform: uppercase;
           text-align: center;
           padding: 10px;
           color: #000;
-          border: 1px solid darkblue;
+          border: 2px solid #2364b0;
           
         }
       }
       tbody {
         tr {
-            border: 1px solid darkblue;
+            border: 2px solid #2364b0;
           color: #000;
           text-align: center;
           td {
             padding: 10px;
-            border: 1px solid darkblue;
+            border: 2px solid #2364b0;
           }
           th {
             padding-left: 10px;
-            border: 1px solid darkblue;
+            border: 2px solid #2364b0;
           }
         }
       }
@@ -46,7 +46,7 @@ $Azure: "#007FFF";
   }
 
   .ScorePage {
-    margin-top: 100px;
+    margin-top: 25px;
   }
 
   .scoreContainer {
