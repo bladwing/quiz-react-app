@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "../style/popup.scss";
 
 export default function TryAgain(props) {
-  const saveAttempt = () => {
+  const [showPopup, setShowPopup] = useState(false);
+  const popupRef = useRef(null);
+
+  useEffect(() => {
+    const hidePopup = (e) => {
+      if (!popupRef.current?.contains(e.target) && showPopup) {
+        setShowPopup(true);
+      }
+    };
+    window.addEventListener("click", hidePopup);
+
+    return () => {
+      window.removeEventListener("click", hidePopup);
+    };
+  });
+
+  const saveAttempt = (ttl) => {
     let attempts = JSON.parse(localStorage.getItem("Attempts")) || [];
     let curDate = new Date();
     let dateToString = curDate.toLocaleString([], {
@@ -19,6 +36,7 @@ export default function TryAgain(props) {
       score: props.value,
       total: props.total,
       time: dateToString,
+      expiry: curDate.getTime(10000),
     });
 
     attempts.sort((a, b) => {
@@ -34,22 +52,38 @@ export default function TryAgain(props) {
     localStorage.setItem("Attempts", JSON.stringify(attempts));
   };
 
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
+  const openPopup = () => {
+    setShowPopup(true);
+  };
+
   return (
-    <div className="ScoreButton">
-      <Link to="/history" className="button2" onClick={saveAttempt}>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        შედეგების ისტორია
-      </Link>
-      <Link to="/quiz" onClick={{}} className="button2">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        ტესტის გამეორება
-      </Link>
+    <div className="buttons-wrapper">
+      <button onClick={openPopup}>ხელახლა ცდა</button>
+
+      {showPopup && (
+        <div
+          style={{
+            visibility: showPopup ? "visible" : "hidden",
+            opacity: showPopup ? "1" : "0",
+          }}
+          className="overlay"
+        >
+          <div className="popup" ref={popupRef}>
+            <h4>შევინახო შედეგი?</h4>
+            <span className="close button2" onClick={closePopup}>
+              X
+            </span>
+            <Link to="/">
+              <button onClick={saveAttempt}>დიახ</button>
+              <button className="btn-history">არა</button>
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
