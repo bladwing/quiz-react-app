@@ -81,16 +81,14 @@ export default function Quiz() {
             <h4>სწორი პასუხი: {score} </h4>
           </div>
           <Link to="/" className="button2">
-              მთავარი გვერდი
-            </Link>
+            მთავარი გვერდი
+          </Link>
           <div className="ScoreButton">
-            
-
             <TryAgain value={score} total={questions.length} />
           </div>
         </div>
       )}
-   
+
       <div className="ProgressContainer">
         <Progress
           className="Progress"
@@ -100,7 +98,6 @@ export default function Quiz() {
           {currentQuestionId}/{questions.length}
         </Progress>
       </div>
-  
     </div>
   );
 }
