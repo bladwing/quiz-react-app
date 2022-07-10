@@ -67,8 +67,13 @@ $red: "#EE3625";
   }
 }
 .questionTitle {
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   font-size: 1.2em;
+  border: 2px solid #{$Azure};
+  background-color: #fdefc3;
+  border-radius: 15px;
+  padding: 7%;
+
 }
 a.quit {
   display: flex;
@@ -76,3 +81,4 @@ a.quit {
   margin: 3% auto;
   width: 16%;
 }
+

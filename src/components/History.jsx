@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import ContextMenu from "./ContextMenu";
 import "../style/history.scss";
-import ContextMenu from "./ContextMenu"
 
 export default function History() {
   const [attempts, setAttempts] = useState([]);
@@ -17,10 +17,6 @@ export default function History() {
     const tmpAttempts = JSON.parse(localStorage.getItem("Attempts") || []);
     setAttempts(tmpAttempts);
   }, []);
-
-
-
-
 
   const handleRightClick = (e, index) => {
     e.preventDefault();
@@ -42,7 +38,6 @@ export default function History() {
   return (
     <div className="historyContainer">
       <div>
-  
         <h2 className="historyScore">შედეგების ისტორია</h2>
         <Link to="/" className="button2">
           მთავარი გვერდი
@@ -50,7 +45,7 @@ export default function History() {
         <table className="historyTable">
           <thead>
             <tr>
-              <th>lvl</th>
+              <th>#</th>
               <th>შედეგი</th>
               <th>თარიღი</th>
             </tr>
@@ -58,11 +53,13 @@ export default function History() {
           <tbody>
             {attempts.length > 0 &&
               attempts.map((attempt, index) => (
-                <tr key={index}
-                   onContextMenu={(e) => handleRightClick(e, index)}>
+                <tr
+                  key={index}
+                  onContextMenu={(e) => handleRightClick(e, index)}
+                >
                   <th>{index + 1}</th>
                   <td>
-                    {attempt.score} / {attempt.total}
+                    {attempt.total} / {attempt.score} 
                   </td>
                   <td>{attempt.time}</td>
                 </tr>
@@ -71,12 +68,12 @@ export default function History() {
         </table>
         {showContextMenu && (
           <ContextMenu
-          locationStyles={{ x: xAxis, y: yAxis }}
-          attemptItemRef={attemptItemRef}
-          id={deleteId}
-          show={showContextMenu}
-          showCallback={handleSettingContextMenuState}
-          removeItem={deleteFromHistory}
+            locationStyles={{ x: xAxis, y: yAxis }}
+            attemptItemRef={attemptItemRef}
+            id={deleteId}
+            show={showContextMenu}
+            showCallback={handleSettingContextMenuState}
+            removeItem={deleteFromHistory}
           ></ContextMenu>
         )}
       </div>

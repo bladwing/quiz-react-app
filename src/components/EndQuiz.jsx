@@ -19,7 +19,7 @@ export default function TryAgain(props) {
     };
   });
 
-  const saveAttempt = (ttl) => {
+  const saveAttempt = () => {
     let attempts = JSON.parse(localStorage.getItem("Attempts")) || [];
     let curDate = new Date();
     let dateToString = curDate.toLocaleString([], {
@@ -60,9 +60,10 @@ export default function TryAgain(props) {
     setShowPopup(true);
   };
 
+
   return (
     <div className="buttons-wrapper">
-      <button onClick={openPopup}>ხელახლა ცდა</button>
+      <button onClick={openPopup}>მთავარი გვერდი</button>
 
       {showPopup && (
         <div
@@ -73,13 +74,19 @@ export default function TryAgain(props) {
           className="overlay"
         >
           <div className="popup" ref={popupRef}>
-            <h4>შევინახო შედეგი?</h4>
+            <h3>შევინახოთ შედეგი?</h3>
+
             <span className="close button2" onClick={closePopup}>
               X
             </span>
             <Link to="/">
-              <button onClick={saveAttempt}>დიახ</button>
-              <button className="btn-history">არა</button>
+              <button onClick={saveAttempt} className="Save">
+                დიახ
+              </button>
+            </Link>
+
+            <Link to="/" className="btn-link">
+              <button>არა</button>
             </Link>
           </div>
         </div>
