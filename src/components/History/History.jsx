@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import ContextMenu from "./ContextMenu";
-import "../style/history.scss";
+import ContextMenu from "../ContextMenu";
+import "./history.scss";
 
 export default function History() {
   const [attempts, setAttempts] = useState([]);

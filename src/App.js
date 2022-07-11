@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import Quiz from "./components/Quiz";
-import History from "./components/History";
+import Quiz from "./components/QuizPage/Quiz";
+import History from "./components/History/History";
 import "./style/buttons.scss";
 import FronEnd from "./style/img/frontEnd.png";
 

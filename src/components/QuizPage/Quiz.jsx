@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Rings } from "react-loader-spinner";
 import { Progress } from "reactstrap";
-import { setWithExpiry, getWithExpiry } from "../utils/LocalStorage";
-import { questionData } from "../connectors/ApiConector";
+import { setWithExpiry, getWithExpiry } from "../../utils/LocalStorage";
+import { questionData } from "../../api/ApiConector";
+
 import SingleType from "./questionTypes/SingleType";
 import MultiType from "./questionTypes/MultyType";
 import BooleanType from "./questionTypes/BooleanType";
-import TryAgain from "./EndQuiz";
-import PictureQuiz from "../style/img/quiz.png";
-import "../style/questionsArea.scss";
+import TryAgain from "../EndQuiz";
+
+import PictureQuiz from "../../style/img/quiz.png";
+import "./quiz.scss";
 
 export default function Quiz() {
   const [data, setData] = useState({ questions: [], answers: [] });
