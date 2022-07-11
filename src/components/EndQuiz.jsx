@@ -4,7 +4,7 @@ import "../style/popup.scss";
 
 export default function TryAgain(props) {
   const [showPopup, setShowPopup] = useState(false);
-  const popupRef = useRef(null);
+  const popupRef = useRef(0);
 
   useEffect(() => {
     const hidePopup = (e) => {
@@ -59,12 +59,20 @@ export default function TryAgain(props) {
   const openPopup = () => {
     setShowPopup(true);
   };
+  const saveRefresh = () => {
+    window.location.reload(false);
+    saveAttempt();
+  };
 
+  const refreshOnly = () => {
+    window.location.reload(false);
+  };
 
   return (
     <div className="buttons-wrapper">
-      <button onClick={openPopup}>მთავარი გვერდი</button>
-
+      <button className="tryAgain" onClick={openPopup}>
+        ხელასხლა ცდა
+      </button>
       {showPopup && (
         <div
           style={{
@@ -79,18 +87,23 @@ export default function TryAgain(props) {
             <span className="close button2" onClick={closePopup}>
               X
             </span>
-            <Link to="/">
-              <button onClick={saveAttempt} className="Save">
-                დიახ
-              </button>
-            </Link>
 
-            <Link to="/" className="btn-link">
-              <button>არა</button>
-            </Link>
+            <button onClick={saveRefresh} className="Save">
+              დიახ
+            </button>
+
+            <button onClick={refreshOnly}>არა</button>
           </div>
         </div>
       )}
+
+      <Link to="/">
+        <button onClick={saveAttempt}>მთავარი გვერდი </button>
+      </Link>
+
+      <Link to="/history" className="button2">
+        შედეგების ისტორია
+      </Link>
     </div>
   );
 }
