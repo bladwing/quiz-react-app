@@ -49,3 +49,11 @@
 .Save {
   margin-right: 18%;
 }
+.buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tryAgain {
+  width: 70%;
+}
