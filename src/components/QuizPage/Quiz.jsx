@@ -77,11 +77,16 @@ export default function Quiz() {
         )
       ) : (
         <div className="ScorePage">
-          <img src={PictureQuiz} alt="quiz" className="PictureQuiz"/>
+          <img src={PictureQuiz} alt="quiz" className="PictureQuiz" />
           <div className="scoreContainer">
             <h2>საბოლო შედეგი</h2>
-            <h3>სულ კითხვა: <span className="scoreNumberBlue">{questions.length}</span></h3>
-            <h3>სწორი პასუხი: <span className="scoreNumberGreen">{score} </span></h3>
+            <h3>
+              სულ კითხვა:{" "}
+              <span className="scoreNumberBlue">{questions.length}</span>
+            </h3>
+            <h3>
+              სწორი პასუხი: <span className="scoreNumberGreen">{score} </span>
+            </h3>
           </div>
           <div className="ScoreButton">
             <TryAgain value={score} total={questions.length} />
@@ -94,7 +99,7 @@ export default function Quiz() {
           color="warning"
           value={(currentQuestionId / questions.length) * 100}
         >
-         <div className="Progress"> {(currentQuestionId) * 20}%</div>
+          <div className="Progress"> {currentQuestionId * 20}%</div>
         </Progress>
       </div>
     </div>
