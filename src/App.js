@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import "./App.css";
-import Quiz from "./components/Quiz";
-import History from "./components/History";
-import "./style/buttons.scss";
-import FronEnd from "./style/img/frontEnd.png";
+import Quiz from "./components/QuizPage/Quiz";
+import History from "./components/History/History";
+
+import "./scss/buttons.scss";
+import "./App.scss";
+
+import FronEnd from "./assets/frontEnd.png";
 
 export default function App() {
   return (
