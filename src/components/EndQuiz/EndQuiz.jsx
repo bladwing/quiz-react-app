@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../style/popup.scss";
+import "./popup.scss";
 
 export default function TryAgain(props) {
   const [showPopup, setShowPopup] = useState(false);
-  const popupRef = useRef(0);
+  const popupRef = useRef(null);
 
   useEffect(() => {
     const hidePopup = (e) => {

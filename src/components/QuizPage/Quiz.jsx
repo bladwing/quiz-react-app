@@ -7,9 +7,9 @@ import { questionData } from "../../api/ApiConector";
 import SingleType from "./questionTypes/SingleType";
 import MultiType from "./questionTypes/MultyType";
 import BooleanType from "./questionTypes/BooleanType";
-import TryAgain from "../EndQuiz";
+import TryAgain from "../EndQuiz/EndQuiz";
 
-import PictureQuiz from "../../style/img/quiz.png";
+import PictureQuiz from "../../assets/quiz.png";
 import "./quiz.scss";
 
 export default function Quiz() {
