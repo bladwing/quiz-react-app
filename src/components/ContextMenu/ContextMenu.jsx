@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../style/contextMenu.scss"
+import "./contextMenu.scss"
 
 export default function ContextMenu(props) {
   const handleDelete = () => {

@@ -1,23 +1,32 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import "../style/popup.scss";
+import "./popup.scss";
 
 export default function TryAgain(props) {
   const [showPopup, setShowPopup] = useState(false);
   const popupRef = useRef(null);
 
-  useEffect(() => {
-    const hidePopup = (e) => {
-      if (!popupRef.current?.contains(e.target) && showPopup) {
-        setShowPopup(true);
-      }
-    };
-    window.addEventListener("click", hidePopup);
+  const handlePopupClick = (e) => {
+    if (!popupRef.current.contains(e.target)) {
+      setShowPopup(false);
+    }
+  };
 
-    return () => {
-      window.removeEventListener("click", hidePopup);
-    };
-  });
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
+  const openPopup = () => {
+    setShowPopup(true);
+  };
+  const saveRefresh = () => {
+    window.location.reload(false);
+    saveAttempt();
+  };
+
+  const refreshOnly = () => {
+    window.location.reload(false);
+  };
 
   const saveAttempt = () => {
     let attempts = JSON.parse(localStorage.getItem("Attempts")) || [];
@@ -36,7 +45,7 @@ export default function TryAgain(props) {
       score: props.value,
       total: props.total,
       time: dateToString,
-      expiry: curDate.getTime(10000),
+      expiry: curDate.getTime(20000),
     });
 
     attempts.sort((a, b) => {
@@ -52,19 +61,11 @@ export default function TryAgain(props) {
     localStorage.setItem("Attempts", JSON.stringify(attempts));
   };
 
-  const closePopup = () => {
-    setShowPopup(false);
-  };
-
-  const openPopup = () => {
-    setShowPopup(true);
-  };
-
-
   return (
     <div className="buttons-wrapper">
-      <button onClick={openPopup}>მთავარი გვერდი</button>
-
+      <button className="tryAgain" onClick={openPopup}>
+        ხელასხლა ცდა
+      </button>
       {showPopup && (
         <div
           style={{
@@ -72,6 +73,7 @@ export default function TryAgain(props) {
             opacity: showPopup ? "1" : "0",
           }}
           className="overlay"
+          onClick={handlePopupClick}
         >
           <div className="popup" ref={popupRef}>
             <h3>შევინახოთ შედეგი?</h3>
@@ -79,18 +81,23 @@ export default function TryAgain(props) {
             <span className="close button2" onClick={closePopup}>
               X
             </span>
-            <Link to="/">
-              <button onClick={saveAttempt} className="Save">
-                დიახ
-              </button>
-            </Link>
 
-            <Link to="/" className="btn-link">
-              <button>არა</button>
-            </Link>
+            <button onClick={saveRefresh} className="Save">
+              დიახ
+            </button>
+
+            <button onClick={refreshOnly}>არა</button>
           </div>
         </div>
       )}
+
+      <Link to="/">
+        <button onClick={saveAttempt}>მთავარი გვერდი </button>
+      </Link>
+
+      <Link to="/history" className="button2">
+        შედეგების ისტორია
+      </Link>
     </div>
   );
 }
