@@ -5,7 +5,7 @@ import History from "./components/History/History";
 import "./scss/buttons.scss";
 import "./App.scss";
 
-import FronEnd from "./assets/frontEnd.png";
+import FronEnd from "./assets/img/frontEnd.png";
 
 export default function App() {
   return (

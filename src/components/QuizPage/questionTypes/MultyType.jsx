@@ -8,15 +8,15 @@ export default function MultiType(props) {
   const selectAnswer = (id) => {
     if (!confirm) {
       if (selected.includes(id + 1)) {
-        let tmp = [...selected];
-        let index = tmp.indexOf(id + 1);
+        let choosed = [...selected];
+        let index = choosed.indexOf(id + 1);
         if (index !== -1) {
-          tmp.splice(index, 1);
+          choosed.splice(index, 1);
         }
-        setSelected(tmp);
+        setSelected(choosed);
       } else {
-        const tmp = [...selected, id + 1];
-        setSelected(tmp);
+        const choosed = [...selected, id + 1];
+        setSelected(choosed);
       }
     }
   };
