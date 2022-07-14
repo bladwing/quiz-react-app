@@ -13,11 +13,11 @@ export default function LastScore() {
     <div className="LastScore">
       {lastAttempt !== null && (
         <div>
-          ბოლო შედეგი:
+          <div>ბოლო შედეგი:</div>
           <span className="scoreNumberBlue">{lastAttempt.total} </span> /{" "}
           <span className="scoreNumberGreen"> {lastAttempt.score}</span>
 
-          <h5>{lastAttempt.time}</h5>
+          <div>{lastAttempt.time}</div>
         </div>
       )}
     </div>

@@ -58,9 +58,10 @@ export default function Popup(props) {
           </div>
         </div>
       )}
-
-      <Link to="/history" className="button2">
-        შედეგების ისტორია
+      <Link to="/" className="button">
+        <button ClassName="butto2" onClick={openPopup}>
+          მთავარი გვერდი
+        </button>
       </Link>
     </div>
   );
