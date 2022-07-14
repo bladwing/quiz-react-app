@@ -59,10 +59,6 @@ export default function Popup(props) {
         </div>
       )}
 
-      <Link to="/">
-        <button>მთავარი გვერდი </button>
-      </Link>
-
       <Link to="/history" className="button2">
         შედეგების ისტორია
       </Link>

@@ -104,7 +104,7 @@ export default function Quiz() {
         </Progress>
         
       </div>
-      <Link to="/" className="button2">ტესტის შეწყვეტა</Link>
+      <Link to="/" className="button2">მთავარი გვერდი</Link>
     </div>
   );
 }
