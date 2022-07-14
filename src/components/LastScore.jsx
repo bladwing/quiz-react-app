@@ -12,13 +12,13 @@ export default function LastScore() {
   return (
     <div className="LastScore">
       {lastAttempt !== null && (
-        <h4>
-          ბოლო შედეგი:
+        <div>
+          <div>ბოლო შედეგი:</div>
           <span className="scoreNumberBlue">{lastAttempt.total} </span> /{" "}
           <span className="scoreNumberGreen"> {lastAttempt.score}</span>
 
-          <h5>{lastAttempt.time}</h5>
-        </h4>
+          <div>{lastAttempt.time}</div>
+        </div>
       )}
     </div>
   );

@@ -25,7 +25,6 @@ export default function App() {
 const Home = () => {
   return (
     <div className="homePage">
-      
       <img src={FronEnd} alt="FrontEnd" className="frontEnd" />
       <h2 className="mainTitle"> გამოცადე შენი ცოდნა Front-End - ში</h2>
 
@@ -35,7 +34,7 @@ const Home = () => {
       <Link to="/history" className="button2 historyButton">
         შედეგების ისტორია
       </Link>
-      <LastScore/>
+      <LastScore />
     </div>
   );
 };
