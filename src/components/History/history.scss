@@ -1,57 +1,65 @@
 $Azure: "#007FFF";
 
-.historyContainer{
-    margin-top: 5%;
-    width: 100%;
-  
-    h2 {
-      text-transform: uppercase;
-      font-weight: bold;
-      color: #247283;
-      text-align: center;
-      padding: 20px 0px;
+.historyContainer {
+  margin-top: 5%;
+  width: 100%;
+  min-height: 500px;
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #247283;
+    text-align: center;
+    padding: 20px 0px;
+  }
+  .historyTable {
+    width: 67%;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    thead {
+      border-bottom: 2px solid #2364b0;
+      th {
+        text-transform: uppercase;
+        text-align: center;
+        padding: 10px;
+        color: #000;
+        border: 2px solid #2364b0;
+      }
     }
-    .historyTable {
-      width: 67%;
-      margin: 0 auto;
-      margin-top: 50px;
-  
-      thead {
-        border-bottom: 2px solid #2364b0;
-        th {
-          text-transform: uppercase;
-          text-align: center;
+    tbody {
+      tr {
+        border: 2px solid #2364b0;
+        color: #000;
+        text-align: center;
+        td {
           padding: 10px;
-          color: #000;
           border: 2px solid #2364b0;
-          
         }
-      }
-      tbody {
-        tr {
-            border: 2px solid #2364b0;
-          color: #000;
-          text-align: center;
-          td {
-            padding: 10px;
-            border: 2px solid #2364b0;
-          }
-          th {
-            padding-left: 10px;
-            border: 2px solid #2364b0;
-          }
+        th {
+          padding-left: 10px;
+          border: 2px solid #2364b0;
         }
       }
     }
   }
+}
 
-  .ScorePage {
-    margin-top: 25px;
-  }
+.ScorePage {
+  margin-top: 25px;
+}
 
-  .scoreContainer {
-    margin-bottom: 100px;
-  }
+.scoreContainer {
+  border: 1px solid #2364b0;
+  border-radius: 10px;
+  background-color: #fdefc3;
+  width: 50%;
+  margin: 0 auto 5% auto;
+}
+
+.scoreContainer h2 {
+  color: #e54f26;
+}
 .ScoreButton {
   margin-top: 20px;
   margin-bottom: 90px;

@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Quiz from "./components/QuizPage/Quiz";
 import History from "./components/History/History";
+import LastScore from "./components/LastScore";
 
 import "./scss/buttons.scss";
 import "./App.scss";
 
-import FronEnd from "./assets/frontEnd.png";
+import FronEnd from "./assets/img/frontEnd.png";
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ const Home = () => {
       <Link to="/history" className="button2 historyButton">
         შედეგების ისტორია
       </Link>
+      <LastScore />
     </div>
   );
 };

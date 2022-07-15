@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {Link} from "react-router-dom"
 import { Rings } from "react-loader-spinner";
 import { Progress } from "reactstrap";
 import { setWithExpiry, getWithExpiry } from "../../utils/LocalStorage";
@@ -7,9 +8,9 @@ import { questionData } from "../../api/ApiConector";
 import SingleType from "./questionTypes/SingleType";
 import MultiType from "./questionTypes/MultyType";
 import BooleanType from "./questionTypes/BooleanType";
-import TryAgain from "../EndQuiz/EndQuiz";
+import Popup from "../Popup/Popup";
 
-import PictureQuiz from "../../assets/quiz.png";
+import PictureQuiz from "../../assets/img/quiz.png";
 import "./quiz.scss";
 
 export default function Quiz() {
@@ -89,7 +90,7 @@ export default function Quiz() {
             </h3>
           </div>
           <div className="ScoreButton">
-            <TryAgain value={score} total={questions.length} />
+            <Popup value={score} total={questions.length} />
           </div>
         </div>
       )}
@@ -99,9 +100,11 @@ export default function Quiz() {
           color="warning"
           value={(currentQuestionId / questions.length) * 100}
         >
-          <div className="Progress"> {currentQuestionId * 20}%</div>
+          <div className="Progress"> {currentQuestionId * 12.5}%</div>
         </Progress>
+        
       </div>
+      <Link to="/" className="button2">მთავარი გვერდი</Link>
     </div>
   );
 }

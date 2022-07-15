@@ -15,7 +15,7 @@ export default function ContextMenu(props) {
     };
     window.addEventListener("click", hideContextMenu);
     return () => {
-      window.removeEventListener("click", hideContextMenu);
+      window.removeEventListener("click", hideContextMenu)
     };
   });
 

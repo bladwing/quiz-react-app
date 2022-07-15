@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { arrayCompare } from "../../../utils/utils";
 
 export default function MultiType(props) {
   const [isCorrect, setIsCorrect] = useState(null);
@@ -8,38 +9,17 @@ export default function MultiType(props) {
   const selectAnswer = (id) => {
     if (!confirm) {
       if (selected.includes(id + 1)) {
-        let tmp = [...selected];
-        let index = tmp.indexOf(id + 1);
+        let choosed = [...selected];
+        let index = choosed.indexOf(id + 1);
         if (index !== -1) {
-          tmp.splice(index, 1);
+          choosed.splice(index, 1);
         }
-        setSelected(tmp);
+        setSelected(choosed);
       } else {
-        const tmp = [...selected, id + 1];
-        setSelected(tmp);
+        const choosed = [...selected, id + 1];
+        setSelected(choosed);
       }
     }
-  };
-
-  const arrayCompare = (_arr1, _arr2) => {
-    if (
-      !Array.isArray(_arr1) ||
-      !Array.isArray(_arr2) ||
-      _arr1.length !== _arr2.length
-    ) {
-      return false;
-    }
-
-    const arr1 = _arr1.concat().sort();
-    const arr2 = _arr2.concat().sort();
-
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    }
-
-    return true;
   };
 
   const handleConfirm = () => {
