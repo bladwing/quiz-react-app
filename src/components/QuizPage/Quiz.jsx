@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import {Link} from "react-router-dom"
 import { Rings } from "react-loader-spinner";
 import { Progress } from "reactstrap";
 import { setWithExpiry, getWithExpiry } from "../../utils/LocalStorage";
@@ -9,6 +8,7 @@ import SingleType from "./questionTypes/SingleType";
 import MultiType from "./questionTypes/MultyType";
 import BooleanType from "./questionTypes/BooleanType";
 import Popup from "../Popup/Popup";
+import PopupMain from "../Popup/PopupMainc";
 
 import PictureQuiz from "../../assets/img/quiz.png";
 import "./quiz.scss";
@@ -75,8 +75,10 @@ export default function Quiz() {
             score={score}
             newScore={handleSetScore}
           ></BooleanType>
+          
         )
       ) : (
+        
         <div className="ScorePage">
           <img src={PictureQuiz} alt="quiz" className="PictureQuiz" />
           <div className="scoreContainer">
@@ -104,7 +106,7 @@ export default function Quiz() {
         </Progress>
         
       </div>
-      <Link to="/" className="button2">მთავარი გვერდი</Link>
+      <PopupMain/>
     </div>
   );
 }
