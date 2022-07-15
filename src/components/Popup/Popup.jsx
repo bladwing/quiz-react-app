@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import { SaveAttempt } from "../../utils/LocalStorage";
 import "./popup.scss";
 
@@ -58,11 +57,6 @@ export default function Popup(props) {
           </div>
         </div>
       )}
-      <Link to="/" className="button">
-        <button ClassName="butto2" onClick={openPopup}>
-          მთავარი გვერდი
-        </button>
-      </Link>
     </div>
   );
 }

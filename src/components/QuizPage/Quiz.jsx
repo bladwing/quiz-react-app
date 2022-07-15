@@ -100,7 +100,7 @@ export default function Quiz() {
           color="warning"
           value={(currentQuestionId / questions.length) * 100}
         >
-          <div className="Progress"> {currentQuestionId * 20}%</div>
+          <div className="Progress"> {currentQuestionId * 12.5}%</div>
         </Progress>
         
       </div>
