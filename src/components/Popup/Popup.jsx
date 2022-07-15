@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { SaveAttempt } from "../../utils/LocalStorage";
 import "./popup.scss";
 
-export default function TryAgain(props) {
+export default function Popup(props) {
   const [showPopup, setShowPopup] = useState(false);
   const popupRef = useRef(null);
 
@@ -21,44 +21,11 @@ export default function TryAgain(props) {
   };
   const saveRefresh = () => {
     window.location.reload(false);
-    saveAttempt();
+    SaveAttempt(props.value, props.total);
   };
 
   const refreshOnly = () => {
     window.location.reload(false);
-  };
-
-  const saveAttempt = () => {
-    let attempts = JSON.parse(localStorage.getItem("Attempts")) || [];
-    let curDate = new Date();
-    let dateToString = curDate.toLocaleString([], {
-      year: "2-digit",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-      second: "2-digit",
-    });
-
-    attempts.push({
-      score: props.value,
-      total: props.total,
-      time: dateToString,
-      expiry: curDate.getTime(20000),
-    });
-
-    attempts.sort((a, b) => {
-      return a.score > b.score
-        ? -1
-        : a.score === b.score
-        ? a.time > b.time
-          ? -1
-          : 1
-        : 1;
-    });
-
-    localStorage.setItem("Attempts", JSON.stringify(attempts));
   };
 
   return (
@@ -90,14 +57,6 @@ export default function TryAgain(props) {
           </div>
         </div>
       )}
-
-      <Link to="/">
-        <button onClick={saveAttempt}>მთავარი გვერდი </button>
-      </Link>
-
-      <Link to="/history" className="button2">
-        შედეგების ისტორია
-      </Link>
     </div>
   );
 }

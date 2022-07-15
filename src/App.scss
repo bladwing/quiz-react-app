@@ -40,6 +40,7 @@ body {
 .Progress {
   display: flex;
   justify-content: center;
+  margin-bottom: 16px;
 }
 
 .Progress {
@@ -62,6 +63,7 @@ body {
 .ScoreButton {
   display: flex;
   justify-content: center;
+  margin-bottom: 5%;
 }
 .PictureQuiz {
   width: 25%;
@@ -73,4 +75,18 @@ body {
 
 .scoreNumberBlue {
   color: blue;
+}
+
+.LastScore {
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 0 auto;
+    background-color: #fff0a5cc;
+    padding: 10px;
+    font-weight: 600;
+
+    .LastTime {
+      font-size: 14px;
+    }
 }
