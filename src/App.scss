@@ -41,8 +41,6 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 16px;
-
- 
 }
 
 .Progress {
@@ -82,15 +80,31 @@ body {
 }
 
 .LastScore {
-    width: 35%;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin: 0 auto;
-    background-color: #fff0a5cc;
-    padding: 10px;
-    font-weight: 600;
+  width: 35%;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 0 auto;
+  background-color: #fff0a5cc;
+  padding: 10px;
+  font-weight: 600;
 
-    .LastTime {
-      font-size: 14px;
-    }
+  .LastTime {
+    font-size: 14px;
+  }
+}
+
+.notFoundPageContainer {
+  color: #2364b0;
+  min-height: 300px;
+  margin-top: 10%;
+  a {
+    text-decoration: none;
+    color: #e54f26;
+  }
+  a:hover {
+    color: #2364b0;
+  }
+  img {
+    width: 30%;
+  }
 }

@@ -7,6 +7,7 @@ import "./scss/buttons.scss";
 import "./App.scss";
 
 import FronEnd from "./assets/img/frontEnd.png";
+import NotFoundPage from "./components/NotFoundPage";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/history" element={<History />} />
           <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFoundPage/>}/>
         </Routes>
       </Router>
     </div>
