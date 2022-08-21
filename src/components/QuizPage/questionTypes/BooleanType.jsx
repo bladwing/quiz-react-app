@@ -36,7 +36,7 @@ export default function Boolean(props) {
             }
             onClick={() => selectAnswer(true)}
           >
-            <span> სწორი </span>
+            <span> True </span>
           </div>
 
           <div
@@ -52,18 +52,18 @@ export default function Boolean(props) {
             }
             onClick={() => selectAnswer(false)}
           >
-            <span>არასწორი</span>
+            <span>False</span>
           </div>
         </div>
       </div>
       {!confirm && selected !== null && (
         <button className="button2" onClick={() => handleConfirm()}>
-          დადასტურება
+          Confirm
         </button>
       )}
       {confirm && (
         <button className="button2" onClick={() => props.onClick()}>
-          შემდეგი
+          Next
         </button>
       )}
     </div>

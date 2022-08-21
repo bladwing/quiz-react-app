@@ -1,8 +1,3 @@
-@font-face {
-  font-family: bpg_glaho;
-  src: url(../../assets/fonts/bpg_glaho.ttf);
-}
-
 $Azure: "#007FFF";
 $beige-secondary: "#FFF0A5CC";
 $green: "#12af64";
@@ -36,7 +31,6 @@ $red: "#EE3625";
         padding: 10px 2px;
         height: 87%;
         font-weight: 600;
-        font-family: bpg_glaho;
         border: 1px solid #{$Azure};
         border-radius: 20px;
 

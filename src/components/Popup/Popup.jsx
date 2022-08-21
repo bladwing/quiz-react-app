@@ -31,7 +31,7 @@ export default function Popup(props) {
   return (
     <div className="buttons-wrapper">
       <button className="tryAgain" onClick={openPopup}>
-        ხელასხლა ცდა
+        Try Again
       </button>
       {showPopup && (
         <div
@@ -43,17 +43,17 @@ export default function Popup(props) {
           onClick={handlePopupClick}
         >
           <div className="popup" ref={popupRef}>
-            <h3>შევინახოთ შედეგი?</h3>
+            <h3>Save results?</h3>
 
             <span className="close button2" onClick={closePopup}>
               X
             </span>
 
             <button onClick={saveRefresh} className="Save">
-              დიახ
+              Yes
             </button>
 
-            <button onClick={refreshOnly}>არა</button>
+            <button onClick={refreshOnly}>No</button>
           </div>
         </div>
       )}

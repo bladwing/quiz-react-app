@@ -24,7 +24,7 @@ export default function PopupMain() {
   return (
     <div className="buttons-wrapper">
       <button className="tryAgain" onClick={openPopup}>
-        მთავარი გვერდი
+        Main Page
       </button>
       {showPopup && (
         <div
@@ -36,17 +36,17 @@ export default function PopupMain() {
           onClick={handlePopupClick}
         >
           <div className="popup" ref={popupRef}>
-            <h3>ნამდვილად გსურთ მთავარ გვერძე გადასვლა?</h3>
+            <h3>Are you sure you want to go main page?</h3>
 
             <span className="close button2" onClick={closePopup}>
               X
             </span>
 
             <Link to="/" className="button2 goMain">
-              დიახ
+              Yes
             </Link>
 
-            <button onClick={closePopup}>არა</button>
+            <button onClick={closePopup}>No</button>
           </div>
         </div>
       )}

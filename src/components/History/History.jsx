@@ -38,16 +38,16 @@ export default function History() {
   return (
     <div className="historyContainer">
       <div>
-        <h2 className="historyScore">შედეგების ისტორია</h2>
+        <h2 className="historyScore">Results History</h2>
         <Link to="/" className="button2">
-          მთავარი გვერდი
+          Main Page
         </Link>
         <table className="historyTable">
           <thead>
             <tr>
               <th>#</th>
-              <th>შედეგი</th>
-              <th>თარიღი</th>
+              <th>Results</th>
+              <th>Date</th>
             </tr>
           </thead>
           <tbody>

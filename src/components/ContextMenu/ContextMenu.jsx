@@ -25,7 +25,7 @@ export default function ContextMenu(props) {
       style={{ top: props.locationStyles.y, left: props.locationStyles.x }}
     >
       <div className="delete-button" onClick={() => handleDelete()}>
-        <span className="delete-text">წაშლა</span>
+        <span className="delete-text">Delete</span>
       </div>
     </div>
   );

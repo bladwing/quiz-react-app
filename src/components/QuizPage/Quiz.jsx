@@ -82,13 +82,13 @@ export default function Quiz() {
         <div className="ScorePage">
           <img src={PictureQuiz} alt="quiz" className="PictureQuiz" />
           <div className="scoreContainer">
-            <h2>საბოლო შედეგი</h2>
+            <h2>Final Result</h2>
             <h3>
-              სულ კითხვა:{" "}
+            Total questions:{" "}
               <span className="scoreNumberBlue">{questions.length}</span>
             </h3>
             <h3>
-              სწორი პასუხი: <span className="scoreNumberGreen">{score} </span>
+            Correct answer: <span className="scoreNumberGreen">{score} </span>
             </h3>
           </div>
           <div className="ScoreButton">

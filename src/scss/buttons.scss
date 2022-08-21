@@ -1,15 +1,23 @@
+@font-face {
+  font-family: 'ChrustyRock-ORLA';
+  src: url('../../src/assets/fonts/ChrustyRock-ORLA.ttf');
+  }
+
+
+
 button, .button2 {
   position: relative;
+  font-family: "ChrustyRock-ORLA";
   z-index: 0;
   border-radius: 4px;
   padding: 10px;
   cursor: pointer;
   text-decoration: none;
-  font-family: bpg_glaho;
-  color: rgb(24, 22, 22);
+  color: #2364b0;
   font-weight: 600;
   font-size: 18px;
   background-color: transparent;
+  
 }
 button {
   border: none;

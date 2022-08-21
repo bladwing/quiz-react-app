@@ -62,12 +62,12 @@ export default function MultiType(props) {
           onClick={() => handleConfirm()}
           disabled={!selected}
         >
-          დადასტურება
+          Confirm
         </button>
       )}
       {confirm && (
         <button className="button2" onClick={() => props.onClick()}>
-          შემდეგი
+          Next
         </button>
       )}
     </div>

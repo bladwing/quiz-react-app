@@ -28,13 +28,13 @@ const Home = () => {
   return (
     <div className="homePage">
       <img src={FronEnd} alt="FrontEnd" className="frontEnd" />
-      <h2 className="mainTitle"> გამოცადე შენი ცოდნა Front-End - ში</h2>
+      <h2 className="mainTitle"> Try youself in Front-End</h2>
 
       <Link to="/quiz" className="button2 startButton">
-        ტესტის დაწყება
+        Start Test
       </Link>
       <Link to="/history" className="button2 historyButton">
-        შედეგების ისტორია
+       Results History
       </Link>
       <LastScore />
     </div>
