@@ -30,22 +30,22 @@ body {
   margin: 0 auto;
   background-color: beige;
   border: 5px solid #2364b0;
-  width: 45%;
+  width: 35%;
   min-width: 340px;
   padding-bottom: 2%;
   border-radius: 10px;
   font-family: bpg_glaho;
 }
 
-.ProgressContainer,
-.Progress {
+.ProgressContainer {
   display: flex;
   justify-content: center;
   margin-bottom: 16px;
+ 
 }
 
 .Progress {
-  width: 400px;
+  width: 325px;
   font-weight: 600;
   padding: 6px;
   color: black;
